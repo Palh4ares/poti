@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PotiguarDev - Landing Page</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-[#e7ebee] min-h-screen">
+
+<!-- MENU FIXO -->
+<nav class="fixed top-0 left-0 w-full bg-white py-4 shadow z-50">
+    <div class="w-[70%] mx-auto flex justify-between items-center">
+        <a href="#top">
+            <img src="images/logo.png" alt="Logo" class="w-20">
+        </a>
+
+        <ul class="flex gap-8 text-lg text-grey-800">
+            <li><a href="#top" class="hover:text-blue-400">Início</a></li>
+            <li><a href="#servicos" class="hover:text-blue-400">Serviços</a></li>
+            <li><a href="#sobre" class="hover:text-blue-400">Sobre</a></li>
+            <li><a href="#contato" class="hover:text-blue-400">Contato</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section id="top" class="relative w-full bg-[#1E1E1E]">
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+    <!-- TEXTO CENTRAL -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-20 px-4">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Transforme sua ideia em realidade
+        </h1>
+
+        <p class="text-lg sm:text-xl md:text-2xl">
+            Desenvolvimento de sites, sistemas e apps feito com qualidade PotiguarDev.
+        </p>
+    </div>
+
+    <!-- SLIDER DE HERO -->
+    <div class="swiper mySwiper w-full overflow-hidden">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="images/eventos/ConexaoODS.jpg" class="w-full h-[350px] sm:h-[420px] md:h-[500px] lg:h-[600px] object-cover object-[50%_32%]">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="images/eventos/CPWAracaju.jpg" class="w-full h-[350px] sm:h-[420px] md:h-[500px] lg:h-[600px] object-cover object-[48%_40%]">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="images/eventos/GoRN.jpg" class="w-full h-[350px] sm:h-[420px] md:h-[500px] lg:h-[600px] object-cover object-[50%_38%]">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="w-full bg-[#F0F8FF] py-16">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-600">Serviços</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-[90%] mx-auto text-center">
+        <div class="p-6 bg-white border border-[#D6E8FF]">
+            <h3 class="text-xl font-semibold mb-2">Criação de Sites</h3>
+            <p>Sites modernos, rápidos e responsivos.</p>
+        </div>
+
+        <div class="p-6 bg-white border border-[#D6E8FF]">
+            <h3 class="text-xl font-semibold mb-2">Softwares</h3>
+            <p>Sistemas personalizados para sua empresa.</p>
+        </div>
+
+        <div class="p-6 bg-white border border-[#D6E8FF]">
+            <h3 class="text-xl font-semibold mb-2">Automação</h3>
+            <p>Soluções inteligentes que economizam tempo.</p>
+        </div>
+    </div>
+</section>
+
+<section id="eventos" class="w-[90%] mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-600">Eventos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        
+        <!-- Evento 1 -->
+        <div class="cursor-pointer text-center"
+             onclick="openImage('images/eventos/ConexaoODS.jpg')">
+            <img src="images/eventos/ConexaoODS.jpg"
+                 class="w-full h-56 object-cover rounded-xl shadow">
+            <p class="mt-3 font-semibold text-lg text-blue-600">
+                Conexão ODS
+            </p>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="cursor-pointer text-center"
+             onclick="openImage('images/eventos/CPWAracaju.jpg')">
+            <img src="images/eventos/CPWAracaju.jpg"
+                 class="w-full h-56 object-cover rounded-xl shadow">
+            <p class="mt-3 font-semibold text-lg text-blue-600">
+                Campus Party Aracaju
+            </p>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="cursor-pointer text-center"
+             onclick="openImage('images/eventos/GoRN.jpg')">
+            <img src="images/eventos/GoRN.jpg"
+                 class="w-full h-56 object-cover rounded-xl shadow">
+            <p class="mt-3 font-semibold text-lg text-blue-600">
+                GoRN Summit
+            </p>
+        </div>
+<!-- MODAL LIGHTBOX -->
+<div id="lightbox"
+     class="fixed inset-0 hidden justify-center items-center bg-black/60 backdrop-blur-sm z-50"
+     onclick="closeImage()">
+
+    <img id="lightboxImg"
+         class="rounded-xl shadow-xl border-[10px] border-b-[50px] border-white max-w-[90%] max-h-[90%] animate-zoom"
+         onclick="event.stopPropagation()">
+</div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- SOBRE -->
+<section id="sobre" class="w-full bg-[#FFF4E6] py-16">
+    <div class="w-[70%] mx-auto text-blue-600">
+        <h2 class="text-3xl text-center font-bold mb-6">Sobre Nós</h2>
+        <p class="text-center text-lg">
+            Somos especialistas em desenvolvimento web e criamos soluções que transformam negócios.
+        </p>
+    </div>
+</section>
+
+
+<!-- DEPOIMENTOS -->
+<section class="min-h-[400px] bg-[#E7FFE6] py-16">
+    <div class="w-[70%] mx-auto text-blue-600">
+        <h2 class="text-3xl font-bold text-center mb-10">Depoimentos</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-6 bg-white">"Excelente serviço!" – João</div>
+            <div class="p-6 bg-white">"Meu site ficou perfeito!" – Maria</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- EQUIPE -->
+<section id="equipe" class="w-[100%] mx-auto py-20 bg-white text-blue-500">
+    <h2 class="text-3xl font-bold text-center mb-12">Nossa Equipe</h2>
+
+    <div class="swiper equipeSwiper">
+        <div class="swiper-wrapper">
+
+            <!-- Membros (adicione mais se quiser) -->
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Eraldo.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Eraldo Palhares</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Lourival.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Lourival Barbosa</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Wilton.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Wilton Araújo</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Juliany.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Juliany</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Leticia.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Leticia</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Denilson.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Denilson</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Marco.png" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Marco</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/João.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">João</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Kaio.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Kaio</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Rafael.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Rafael</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/perfil.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Gabriel</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Wesley.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Wesley</p>
+            </div>
+
+            <div class="swiper-slide flex flex-col items-center">
+                <img src="images/equipe/Carlos.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
+                <p class="mt-3 font-semibold">Carlos</p>
+            </div>
+
+
+            <!-- continue adicionando… -->
+
+        </div>
+
+        <!-- Botões -->
+        <div class="swiper-button-next text-blue-500"></div>
+        <div class="swiper-button-prev text-blue-500"></div>
+    </div>
+</section>
+
+
+<!-- CONTATO -->
+<section id="contato" class="w-full bg-[#E6F7FF] py-16 text-center text-blue-600">
+    <h2 class="text-3xl font-bold mb-4">Entre em Contato</h2>
+    <p class="mb-6 text-xl">Pronto para transformar sua ideia em realidade?</p>
+
+    <a href="https://wa.me/5584991696213" class="bg-green-600 px-8 py-3 rounded-lg text-xl font-semibold text-white">
+        Falar no WhatsApp
+    </a>
+</section>
+
+
+<!-- RODAPÉ -->
+<footer class="w-full bg-black py-6 text-right text-white">
+    © 2025 PotiguarDev — Todos os direitos reservados
+</footer>
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- SLIDE HERO -->
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        speed: 1500,
+        autoplay: { delay: 2500, disableOnInteraction: false }
+    });
+</script>
+
+<!-- SLIDE EQUIPE COM BOTÕES -->
+<script>
+    new Swiper(".equipeSwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        slidesPerGroup: 5,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: { slidesPerView: 2, slidesPerGroup: 2 },
+            640: { slidesPerView: 3, slidesPerGroup: 3 },
+            900: { slidesPerView: 4, slidesPerGroup: 4 },
+            1200: { slidesPerView: 5, slidesPerGroup: 5 },
+        }
+    });
+</script>
+<script>
+  function openImage(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.body.style.overflow = "hidden"; // trava scroll
+  }
+
+  function closeImage() {
+    document.getElementById('lightbox').classList.add('hidden');
+    document.body.style.overflow = "auto";
+  }
+</script>
+
+</body>
+</html>
