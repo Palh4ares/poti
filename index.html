@@ -116,13 +116,15 @@
 
         <!-- Evento 2 -->
         <div class="cursor-pointer text-center"
-             onclick="openImage('images/eventos/CPWAracaju.jpg')">
-            <img src="images/eventos/CPWAracaju.jpg"
-                 class="w-full h-56 object-cover rounded-xl shadow">
-            <p class="mt-3 font-semibold text-lg text-blue-600">
-                Campus Party Aracaju
-            </p>
-        </div>
+     onclick="openImage('images/eventos/CPWAracaju.jpg',
+     'A Campus Party Aracaju é um evento que reúne profissionais e entusiastas para discutir os Objetivos de Desenvolvimento Sustentável da ONU.')">
+    <img src="images/eventos/CPWAracaju.jpg"
+         class="w-full h-56 object-cover rounded-xl shadow">
+    <p class="mt-3 font-semibold text-lg text-blue-600">
+        Campus Party Aracaju
+    </p>
+</div>
+
 
         <!-- Evento 3 -->
         <div class="cursor-pointer text-center"
@@ -135,14 +137,28 @@
         </div>
 <!-- MODAL LIGHTBOX -->
 <div id="lightbox"
-     class="fixed inset-0 hidden flex justify-center items-center bg-black/60 backdrop-blur-sm z-50"
+     class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center p-4"
      onclick="closeImage()">
 
-
-    <img id="lightboxImg"
-         class="rounded-xl shadow-xl border-[10px] border-b-[50px] border-white max-w-[90%] max-h-[90%] animate-zoom"
+    <div id="lightboxContainer"
+         class="relative flex flex-col items-center"
          onclick="event.stopPropagation()">
+
+        <!-- IMAGEM -->
+        <img id="lightboxImg"
+             class="rounded-t-xl shadow-xl border-[10px] border-white border-b-0 max-h-[70vh] object-contain">
+
+        <!-- TEXTO (mesma largura da imagem) -->
+        <div class="bg-white border-[10px] border-t-0 border-white rounded-b-xl p-4 w-full">
+            <p id="lightboxText" 
+               class="text-center text-base font-light text-gray-700 leading-snug break-words"></p>
+        </div>
+
+    </div>
 </div>
+
+
+
 
     </div>
 </section>
@@ -182,74 +198,71 @@
     <div class="swiper equipeSwiper">
         <div class="swiper-wrapper">
 
-            <!-- Membros (adicione mais se quiser) -->
-            <div class="swiper-slide flex flex-col items-center">
+            <!-- Membros -->
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('eraldo')">
                 <img src="images/equipe/Eraldo.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Eraldo Palhares</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('lorival')">
                 <img src="images/equipe/Lourival.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Lourival Barbosa</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('wilton')">
                 <img src="images/equipe/Wilton.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Wilton Araújo</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('juliany')">
                 <img src="images/equipe/Juliany.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Juliany</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('leticia')">
                 <img src="images/equipe/Leticia.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Leticia</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('denilson')">
                 <img src="images/equipe/Denilson.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Denilson</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('marco')">
                 <img src="images/equipe/Marco.png" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Marco</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('joao')">
                 <img src="images/equipe/João.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">João</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('kaio')">
                 <img src="images/equipe/Kaio.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Kaio</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('rafael')">
                 <img src="images/equipe/Rafael.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Rafael</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('gabriel')">
                 <img src="images/equipe/perfil.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Gabriel</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('wesley')">
                 <img src="images/equipe/Wesley.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Wesley</p>
             </div>
 
-            <div class="swiper-slide flex flex-col items-center">
+            <div class="swiper-slide flex flex-col items-center cursor-pointer" onclick="openTeamModal('carlos')">
                 <img src="images/equipe/Carlos.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow">
                 <p class="mt-3 font-semibold">Carlos</p>
             </div>
-
-
-            <!-- continue adicionando… -->
 
         </div>
 
@@ -258,6 +271,24 @@
         <div class="swiper-button-prev text-blue-500"></div>
     </div>
 </section>
+<div id="teamModal"
+     class="fixed inset-0 hidden z-[9999] bg-black/60 backdrop-blur-md flex items-center justify-center p-4"
+     onclick="closeTeamModal(event)">
+    
+    <div class="bg-white rounded-xl shadow-2xl p-6 max-w-xs w-full border-4 border-blue-500 modal-content relative">
+        <img id="modalTeamImg" class="w-full rounded-lg mb-4">
+        <h3 id="modalTeamName" class="text-xl font-bold text-center text-blue-600"></h3>
+        <p id="modalTeamRole" class="text-center text-gray-600 mt-2"></p>
+
+        <div class="flex justify-center gap-4 mt-4">
+            <a id="socialInsta" target="_blank" class="px-4 py-2 bg-pink-500 text-white rounded-lg">Instagram</a>
+            <a id="socialLinkedin" target="_blank" class="px-4 py-2 bg-blue-700 text-white rounded-lg">LinkedIn</a>
+            <a id="socialGithub" target="_blank" class="px-4 py-2 bg-gray-800 text-white rounded-lg">GitHub</a>
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- CONTATO -->
@@ -309,17 +340,62 @@
         }
     });
 </script>
+<!-- Modal Eventos -->
 <script>
-  function openImage(src) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightbox').classList.remove('hidden');
-    document.body.style.overflow = "hidden"; // trava scroll
-  }
+  function openImage(src, text) {
+    const img = document.getElementById('lightboxImg');
+    const textBox = document.getElementById('lightboxText');
+    const container = document.getElementById('lightboxContainer');
 
-  function closeImage() {
+    img.onload = () => {
+        // Ajusta o container para ter a largura exata da imagem
+        container.style.width = img.clientWidth + "px";
+    };
+
+    img.src = src;
+    textBox.innerHTML = text;
+
+    document.getElementById('lightbox').classList.remove('hidden');
+}
+
+function closeImage() {
     document.getElementById('lightbox').classList.add('hidden');
-    document.body.style.overflow = "auto";
-  }
+}
+
+
+</script>
+<!--Equipe-->
+<script>
+const teamData = {
+    eraldo: { img: "images/equipe/Eraldo.jpg", name: "Eraldo Palhares", role: "CEO - PotiguarDev" },
+    lorival: { img: "images/equipe/Lourival.jpg", name: "Lourival", role: "CEO - PotiguarDev" },
+    wilton: { img: "images/equipe/Wilton.jpg", name: "Wilton Araújo", role: "Designer" },
+    juliany: { img: "images/equipe/Juliany.jpg", name: "Juliany", role: "Marketing" },
+    leticia: { img: "images/equipe/Leticia.jpg", name: "Leticia", role: "Marketing" },
+    denilson: { img: "images/equipe/Denilson.jpg", name: "Denilson", role: "Desenvolvedor" },
+    marco: { img: "images/equipe/Marco.png", name: "Marco", role: "Desenvolvedor" },
+    joao: { img: "images/equipe/João.jpg", name: "João", role: "Dev" },
+    kaio: { img: "images/equipe/Kaio.jpg", name: "Kaio", role: "Estagiário" },
+    rafael: { img: "images/equipe/Rafael.jpg", name: "Rafael", role: "Gerente" },
+    gabriel: { img: "images/equipe/perfil.jpg", name: "Gabriel", role: "Dev" },
+    wesley: { img: "images/equipe/Wesley.jpg", name: "Wesley", role: "Dev" },
+    carlos: { img: "images/equipe/Carlos.jpg", name: "Carlos", role: "Dev" },
+};
+
+function openTeamModal(id) {
+    const m = teamData[id];
+    document.getElementById("modalTeamImg").src = m.img;
+    document.getElementById("modalTeamName").textContent = m.name;
+    document.getElementById("modalTeamRole").textContent = m.role;
+
+    document.getElementById("teamModal").classList.remove("hidden");
+}
+
+function closeTeamModal(event) {
+    if (event.target.id === "teamModal") {
+        document.getElementById("teamModal").classList.add("hidden");
+    }
+}
 </script>
 
 </body>
